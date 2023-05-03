@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/fexex/modelagem.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="1529"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,9:mainCandidato"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1">CREATE TABLE Candidato (
+    id INTEGER PRIMARY KEY,
+    nome TEXT NOT NULL,
+    email TEXT NOT NULL,
+    telefone TEXT,
+    endereco TEXT,
+    sobre_mim TEXT
+);
+
+CREATE TABLE Formação (
+    id INTEGER PRIMARY KEY,
+    candidato_id INTEGER,
+    instituicao TEXT NOT NULL,
+    grau TEXT NOT NULL,
+    especialidade TEXT NOT NULL,
+    data_inicio TEXT,
+    data_fim TEXT,
+    media REAL,
+    FOREIGN KEY (candidato_id) REFERENCES Candidato(id)
+);
+
+CREATE TABLE Experiência (
+    id INTEGER PRIMARY KEY,
+    candidato_id INTEGER,
+    empresa TEXT NOT NULL,
+    cargo TEXT NOT NULL,
+    data_inicio TEXT,
+    data_fim TEXT,
+    descricao TEXT,
+    FOREIGN KEY (candidato_id) REFERENCES Candidato(id)
+);
+
+CREATE TABLE Realização (
+    id INTEGER PRIMARY KEY,
+    candidato_id INTEGER,
+    titulo TEXT NOT NULL,
+    data TEXT,
+    descricao TEXT,
+    FOREIGN KEY (candidato_id) REFERENCES Candidato(id)
+);
+
+CREATE TABLE Habilidade (
+    id INTEGER PRIMARY KEY,
+    candidato_id INTEGER,
+    nome TEXT NOT NULL,
+    nivel_proficiencia TEXT,
+    FOREIGN KEY (candidato_id) REFERENCES Candidato(id)
+);
+
+CREATE TABLE TraçoPersonalidade (
+    id INTEGER PRIMARY KEY,
+    candidato_id INTEGER,
+    traco TEXT NOT NULL,
+    descricao TEXT,
+    FOREIGN KEY (candidato_id) REFERENCES Candidato(id)
+);
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
