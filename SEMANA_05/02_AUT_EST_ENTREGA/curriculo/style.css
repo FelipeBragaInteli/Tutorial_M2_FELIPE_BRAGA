@@ -1,0 +1,39 @@
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: #BFC9CA;
+    background-color: #2C3E50;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #34495E;
+    padding: 20px;
+    text-align: center;
+    color: #FDFEFE;
+}
+
+section {
+    margin: 20px;
+    border-bottom: 1px solid #7F8C8D;
+    padding-bottom: 10px;
+}
+
+section h2 {
+    color: #FDFEFE;
+}
+
+section p {
+    color: #BFC9CA;
+    line-height: 1.6;
+}
+
+footer {
+    background-color: #34495E;
+    padding: 10px;
+    text-align: center;
+    color: #FDFEFE;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
